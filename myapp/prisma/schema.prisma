@@ -48,3 +48,20 @@ model User {
   sessions      Session[]
 
 }
+
+model Workout {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  title     String?
+  userId    String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  exercises Exercise[] 
+}
+
+model Exercise {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  title    String?
+  duration Int
+  workout  Workout? @relation(fields: [workoutId], references: [id])
+  workoutId String?  @db.ObjectId 
+}
