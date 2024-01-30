@@ -1,4 +1,5 @@
 import CreateWorkout from '@/components/Form/CreateWorkout';
+import WorkoutCard from '@/components/Items/WorkoutCard';
 import NoWorkoutMessage from '@/components/NoWorkoutMessage';
 import { getUserWorkouts } from '@/lib/data'
 import getServerUser from '@/lib/getServerUser'
@@ -56,15 +57,12 @@ async function WorkoutList(){
     }
     return (
         <>
-        <CreateWorkout />
-        <p>Your Workouts</p>
-        <div className="flex flex-col gap-4 mt-6">
-            {workouts.map((workout) => (
-                <div key={workout.id}>
-                    <span>{workout.title}</span>
-                </div>
-            ))}            
-        </div>
+      <CreateWorkout />
+      <div className="flex flex-col gap-4 mt-6">
+        {workouts.map((workout) => (
+          <WorkoutCard key={workout.id} workout={workout} />
+        ))}
+      </div>
         
         </>
     )
