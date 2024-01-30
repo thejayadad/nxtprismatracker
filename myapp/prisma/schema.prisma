@@ -53,9 +53,17 @@ model Workout {
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
   title     String?
   userId    String?
+  category  Style      
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   exercises Exercise[] 
+}
+
+enum Style {
+  HIIT
+  LowImpact
+  HighImpact
+  Maintence
 }
 
 model Exercise {

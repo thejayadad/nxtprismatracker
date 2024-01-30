@@ -4,6 +4,7 @@ import {getServerSession} from "next-auth";
 import { authOptions } from '@/lib/auth';
 import LoginWithGoogle from '../Buttons/LoginWithGoogle';
 import LogoutButton from '../Buttons/LogoutButton';
+import ThemeToggle from '../Buttons/ThemeToggle';
 
 const AuthLinks = async () => {
     const session = await getServerSession(authOptions);
@@ -21,6 +22,7 @@ const AuthLinks = async () => {
               href={'/dashboard/${email}'}>
                 Hello, {session?.user?.name}
               </Link> */}
+              <ThemeToggle />
               <LogoutButton />
             </div>
           )}
