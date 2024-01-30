@@ -5,7 +5,7 @@ import {Input, Button} from "@nextui-org/react";
 import { addExercise } from '@/lib/actions';
 
 
-const AddExercise = () => {
+const AddExercise = ({workoutId}) => {
   return (
     <div>AddExercise
         <form
