@@ -1,7 +1,8 @@
+import CreateWorkout from '@/components/Form/CreateWorkout';
+import NoWorkoutMessage from '@/components/NoWorkoutMessage';
 import { getUserWorkouts } from '@/lib/data'
 import getServerUser from '@/lib/getServerUser'
 import React, { Suspense } from 'react'
-import { FiDumbbell } from "react-icons/fi"; // Import a placeholder workout icon
 
 
 const DashboardPage = async () => {
@@ -47,26 +48,10 @@ async function WorkoutList(){
 
     if(workouts.length === 0){
         return (
-            <div className="flex flex-col items-center"
-            style={{
-                marginTop: '-100px'
-            }}
-            
-            >
-            <img 
-            src='../logo.png'
-            className='h-[400px]'
-                style={{
-                    marginBottom: '-100px'
-                }}
-            alt='Logo'
-            />
-            <h2 
-            
-            className="text-center text-grey">
-              No Workouts Posted Yet, Post your first workout today!
-            </h2>
-          </div>
+        <div className='flex items-center flex-col gap-4'>
+        <NoWorkoutMessage />
+        <CreateWorkout />
+        </div>
         )
     }
     return (

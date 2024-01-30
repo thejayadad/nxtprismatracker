@@ -23,7 +23,6 @@ const ThemeToggle = () => {
       <Switch
         defaultSelected={resolvedTheme === 'dark'} 
         size="lg"
-        color="success"
         onChange={handleToggle} 
         startContent={<FiSun />}
         endContent={<FiMoon />}
