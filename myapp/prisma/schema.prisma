@@ -63,7 +63,7 @@ enum Style {
   HIIT
   LowImpact
   HighImpact
-  Maintence
+  Maintenance
 }
 
 model Exercise {

@@ -56,7 +56,8 @@ async function WorkoutList(){
     }
     return (
         <>
-        <p>Create Workout</p>
+        <CreateWorkout />
+        <p>Your Workouts</p>
         <div className="flex flex-col gap-4 mt-6">
             {workouts.map((workout) => (
                 <div key={workout.id}>

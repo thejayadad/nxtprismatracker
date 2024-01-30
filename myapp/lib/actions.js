@@ -1,7 +1,8 @@
 'use server'
 import { revalidatePath } from "next/cache";
-import prisma from "@/lib/connect"
 import getServerUser from "./getServerUser";
+import prisma from "@/lib/prisma"
+import { redirect } from "next/navigation";
 
 
 export const addWorkout = async (formData) => {
@@ -11,7 +12,7 @@ export const addWorkout = async (formData) => {
     const { title, category } =
     Object.fromEntries(formData);
     try {
-        await prisma.post.create({
+        await prisma.workout.create({
            data: {
             title, category,
              userId: email, 

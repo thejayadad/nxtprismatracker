@@ -1,6 +1,6 @@
 'use server'
 import getServerUser from "./getServerUser"
-import prisma from "@/lib/connect"
+import prisma from "@/lib/prisma"
 
 
 export const getUserWorkouts = async() => {
